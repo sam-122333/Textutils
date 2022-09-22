@@ -1,16 +1,20 @@
 import React from "react";
 export default function About(props) {
+  const compStyle = {
+    color: props.mode === "light" ? "black" : "white",
+    backgroundColor: props.mode === "light" ? "white" : "#1d304c",
+  };
   return (
     <>
       <div className="container py-2 border border-dange rounded-top rounded-bottom my-3">
         <div className="accordion" id="accordionExample">
-          <h1 className="my-3" style={props.compStyle}>
+          <h1 className="my-3" style={compStyle}>
             About Us
           </h1>
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
               <button
-                style={props.compStyle}
+                style={compStyle}
                 className="accordion-button"
                 type="button"
                 data-bs-toggle="collapse"
@@ -22,7 +26,7 @@ export default function About(props) {
               </button>
             </h2>
             <div
-              style={props.compStyle}
+              style={compStyle}
               id="collapseOne"
               className="accordion-collapse collapse show"
               aria-labelledby="headingOne"
@@ -44,7 +48,7 @@ export default function About(props) {
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingTwo">
               <button
-                style={props.compStyle}
+                style={compStyle}
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -55,7 +59,8 @@ export default function About(props) {
                 Accordion Item #2
               </button>
             </h2>
-            <div style={props.compStyle}
+            <div
+              style={compStyle}
               id="collapseTwo"
               className="accordion-collapse collapse"
               aria-labelledby="headingTwo"
@@ -76,7 +81,8 @@ export default function About(props) {
           </div>
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingThree">
-              <button style={props.compStyle}
+              <button
+                style={compStyle}
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -87,7 +93,8 @@ export default function About(props) {
                 Accordion Item #3
               </button>
             </h2>
-            <div style={props.compStyle}
+            <div
+              style={compStyle}
               id="collapseThree"
               className="accordion-collapse collapse"
               aria-labelledby="headingThree"
@@ -112,4 +119,4 @@ export default function About(props) {
   );
 }
 
-// not for staging 
+// not for staging

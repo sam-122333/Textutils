@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
-
+  const styleColor = { color: props.mode === "light" ? "black" : "white" };
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -37,9 +37,9 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container my-3">
+      <div className="container my-3" style={styleColor}>
         <div className="mb-3">
-          <h2 style={props.style}>{props.textArea}</h2>
+          <h2>{props.textArea}</h2>
           <textarea
             placeholder="Enter Some Text Here..."
             value={text}
@@ -47,46 +47,49 @@ export default function TextForm(props) {
             id="myBox"
             rows="8"
             onChange={handleChange}
-            style={props.textStyle}
+            style={{
+              color: props.mode === "light" ? "black" : "white",
+              backgroundColor: props.mode === "light" ? "white" : "black",
+            }}
           ></textarea>
         </div>
         <button
           disabled={text.length === 0}
           onClick={changeUpperCase}
-          className={`btn btn-${props.btn} mx-2 my-1`}
+          className="btn btn-primary mx-2 my-1"
         >
           Convert to Uppercase
         </button>
         <button
           disabled={text.length === 0}
           onClick={changeLowerCase}
-          className={`btn btn-${props.btn} mx-2 my-1`}
+          className="btn btn-primary mx-2 my-1"
         >
           Convert to Lowercase
         </button>
         <button
           disabled={text.length === 0}
           onClick={handleCopy}
-          className={`btn btn-${props.btn} mx-2 my-1`}
+          className="btn btn-primary mx-2 my-1"
         >
           Copy Text
         </button>
         <button
           disabled={text.length === 0}
           onClick={handleExtraSpace}
-          className={`btn btn-${props.btn} mx-2 my-1`}
+          className="btn btn-primary mx-2 my-1"
         >
           Remove Space
         </button>
         <button
           disabled={text.length === 0}
           onClick={clearText}
-          className={`btn btn-${props.btn} mx-2 my-1`}
+          className="btn btn-primary mx-2 my-1"
         >
           Clear Text
         </button>
       </div>
-      <div className="container my-3" style={props.style}>
+      <div className="container my-3" style={styleColor}>
         <h1>your text summery</h1>
         <p>
           {
