@@ -24,10 +24,13 @@ function App() {
     if (mode === "dark") {
       setMode("light");  
       setChangeTextMode("Enable Dark Mode"); 
+      showAlert("Dark Mode Enabled","Success!");
     }
     else{
       setMode("dark");   
       setChangeTextMode("Disable Dark Mode");
+      showAlert("Light Mode Enabled","Success!");
+
     }
     console.log(mode);
     document.body.style.backgroundColor = mode === "light" ? "#1d304c":"white"; 
